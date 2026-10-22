@@ -8,10 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
-    <script src="scripts.js"></script>
-
+    <script src="/script.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-
 </head>
 
 <body class="bg-[url('assets/backgrands/backgrand.png')] bg-no-repeat bg-cover bg-center bg-fixed ">
@@ -42,18 +40,37 @@ text-gray-50 text-3xl transition-transform hover:scale-105 font-[family-name:'Me
         <div class="bg-black h-[200px] w-[200px] justify-self-center">
             <p class="text-gray-50 text-2xl">painer = <span id="valeur-painer">0</span></p>
             <p class="text-gray-50 text-2xl">totale = <span id="valeur-totale">0</span></p>
+            <button class="bg-amber-900 border-2 border-amber-600 px-8 py-3 uppercase h-[50px] w-[50px] font-bold hover:bg-amber-800 transition clear">clear</button></div>
+            <ul class="items" ></ul>
         </div>
         <div class="bg-[#000]  h-[700px] w-[1500px] justify-self-center my-[10px] flex gap-[5px]">
+
             <div class="bg-[#ffffff]  h-[650px] w-[371px] flex flex-col align-center ">
-                <img src="" alt="">
-                <button
-                    class="bg-amber-900 border-2 border-amber-600 px-8 py-3 uppercase h-[50px] w-[50px] font-bold hover:bg-amber-800 transition">ajouter</button>
-            </div>
+                 <img src="assets/boosters/Commune.png" alt="">
+                <p><span class="prix">100</span>DH</p>
+
+                <button class="bg-amber-900 border-2 border-amber-600 px-8 py-3 uppercase h-[50px] w-[50px] font-bold hover:bg-amber-800 transition ajouter">ajouter</button></div>
+
+            <div class="bg-[#ffffff]  h-[650px] w-[371px] flex flex-col align-center ">
+
+                 <img src="assets/boosters/Épique.png" alt="">
+                <p><span class="prix">200</span>DH</p>
+                <button class="bg-amber-900 border-2 border-amber-600 px-8 py-3 uppercase h-[50px] w-[50px] font-bold hover:bg-amber-800 transition ajouter">ajouter</button></div>
+
+            <div class="bg-[#ffffff]  h-[650px] w-[371px] flex flex-col align-center ">
+
+                 <img src="assets/boosters/Légendaire.png" alt="">
+                <p><span class="prix">300</span>DH</p>
+                <button class="bg-amber-900 border-2 border-amber-600 px-8 py-3 uppercase h-[50px] w-[50px] font-bold hover:bg-amber-800 transition ajouter">ajouter</button></div>
 
 
-
-
+            <div class="bg-[#ffffff]  h-[650px] w-[371px] flex flex-col align-center ">
+                
+                 <img src="assets/boosters/Rare.png" alt="">
+                <p><span class="prix">400</span>DH</p>
+                <button class="bg-amber-900 border-2 border-amber-600 px-8 py-3 uppercase h-[50px] w-[50px] font-bold hover:bg-amber-800 transition ajouter">ajouter</button></div>
         </div>
+
     </main>
 </body>
 
