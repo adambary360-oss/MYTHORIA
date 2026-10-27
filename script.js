@@ -7,10 +7,13 @@ const contité = document.querySelectorAll(".contité")
 const cartslist = document.querySelector(".lescarts")
 const preview = document.querySelector(".preview");
 const lesboosterbox = document.querySelector(".lesboosterbox")
-console.log(lesboosterbox);
+const les5cartsbox = document.querySelector(".les5cartsbox")
+const btnvalider = document.querySelector(".valider")
+console.log(lesboosterbox, les5cartsbox,btnvalider);
 
 // panier
 let panier = [];
+let boostervalider = [];
 
 for (const raw of (localStorage.getItem('panierItems') || "").split(";")) {
     if (!raw) continue;
@@ -19,9 +22,12 @@ for (const raw of (localStorage.getItem('panierItems') || "").split(";")) {
     if (existing) {
         existing.qte += Number(qte) || 1;
     } else {
-        panier.push({ nom: nom, prix: Number(prix), qte: Number(qte) || 1 });
+        panier.push({nom: nom, prix: Number(prix), qte: Number(qte) || 1 });
     }
 }
+
+
+
 localStorage.removeItem('panier');
 let panierCount = panier.reduce((somme, item) => somme + item.qte, 0);
 let totalPrix = panier.reduce((somme, item) => somme + item.prix * item.qte, 0);
@@ -74,6 +80,12 @@ btnAjouter.forEach(btn => {
     });
 });
 
+
+
+
+
+
+
 btnClear.addEventListener('click', () => {
     panier = [];
     panierCount = 0;
@@ -82,6 +94,11 @@ btnClear.addEventListener('click', () => {
     saveData();
     console.log("Panier vidé");
 });
+
+
+
+
+
 
 if (panierListUI) {
     panierListUI.addEventListener('click', (e) => {
@@ -103,6 +120,10 @@ if (panierListUI) {
         saveData();
     });
 }
+
+
+
+
 // colors
 const colors = {
     commune: "border-gray-500    bg-gray-500/80",
@@ -124,6 +145,11 @@ cartslist.innerHTML = collection.map(card => `
         </div>
     `).join("");
 // preview
+
+
+
+
+
 const showCard = (card) => {
     preview.innerHTML = `
             <img src="${card.img}" alt="${card.nom}" class="w-[20rem] rounded-xl border-2 ${colors[card.rarete].split(" ")[0]}">
@@ -148,6 +174,10 @@ const showCard = (card) => {
 };
 
 showCard(collection[0]); //pardafo
+
+
+
+
 // cleck les carts
 cartslist.addEventListener("click", (e) => {
     const cardDiv = e.target.closest("[data-id]");
@@ -156,6 +186,12 @@ cartslist.addEventListener("click", (e) => {
     const card = collection.find(c => c.id === id);
     if (card) showCard(card);
 });
+console.log(panier);
 
 //boosterbox
-lesboosterbox.innerHTML = panier.map()
+lesboosterbox.innerHTML = panier.map((item) =>
+ `<li class="text-gray-50 flex items-center gap-2">
+            <span>${item.nom}${item.qte > 1 ? ` ×${item.qte}` : ""} - ${item.prix * item.qte} DH</span>
+        </li>`)
+    .join("");
+
