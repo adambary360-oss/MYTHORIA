@@ -1,4 +1,4 @@
-const MYTHORIA_CARDS = [
+const datacarts = [
     {
         id: "forest-spirit",
         nom: "Esprit de la Forêt",
