@@ -4,57 +4,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Mythoria — Inboxing</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
-    <script src="/script.js" defer></script>
-    <script src="/all cards.js"></script>
+    <script src="cards-data.js"></script>
+    <script src="all cards.js"></script>
+    <script src="js/common.js" defer></script>
+    <script src="js/inboxing.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body class="bg-[url('assets/backgrands/backgrand.png')] bg-no-repeat bg-cover bg-center bg-fixed ">
-    <header class="relative z-50 backdrop-blur-lg rounded-3xl border border-white/20 shadow-2xl shadow-black/10 my-[10px] justify-self-center ">
 
-        <ul class="flex justify-around justify-self-center items-center">
+<body class="bg-[url('assets/backgrands/backgrand.png')] bg-no-repeat bg-cover bg-center bg-fixed min-h-screen">
+    <header class="relative z-50 backdrop-blur-lg rounded-3xl border border-white/20 shadow-2xl shadow-black/10 my-[10px] justify-self-center">
+        <ul class="flex flex-wrap justify-around items-center gap-2 mx-auto max-w-full">
             <li>
-                <a href="homepage.html"><img src="/assets/logo/logo.png" alt="logo" class="size-fit max-h-[100px]"></a>
+                <a href="homepage.html"><img src="assets/logo/logo.png" alt="logo" class="size-fit max-h-[100px]"></a>
             </li>
             <li class="relative z-50">
                 <!-- Panier -->
                 <details
                     class="relative z-50 p-3 w-[80px] h-[80px] rounded-2xl bg-[#292929] open:absolute open:top-0 open:left-0 open:w-[360px] open:h-auto open:max-h-[80vh] open:overflow-y-auto">
-                    <summary class="list-none relative cursor-pointer flex justify-center items-center"><img src="assets/Panier/Panier.png" alt=""
-                            class="max-h-[56px]">
+                    <summary class="list-none relative cursor-pointer flex justify-center items-center">
+                        <img src="assets/Panier/Panier.png" alt="" class="max-h-[56px]">
                         <span id="panier-badge" class="absolute -top-2 -right-2 hidden h-6 min-w-6 px-1 rounded-full bg-amber-600 border border-amber-300 text-white text-sm font-bold text-center leading-6">0</span>
                     </summary>
                     <p class="text-gray-50 text-2xl">painer = <span id="valeur-painer">0</span></p>
                     <p class="text-gray-50 text-2xl">totale = <span id="valeur-totale">0</span></p>
                     <ul class="Panieritems"></ul>
-                    <button
-                        class="bg-amber-900 border-2 border-amber-600 px-8 py-3 uppercase h-[50px] w-[72px] font-bold hover:bg-amber-800 transition clear">clear</button>
+                    <button class="bg-amber-900 border-2 border-amber-600 px-8 py-3 uppercase h-[50px] w-[72px] font-bold hover:bg-amber-800 transition clear">clear</button>
+                    <button class="bg-amber-900 border-2 border-amber-600 px-8 py-3 uppercase h-[50px] w-[72px] font-bold hover:bg-amber-800 transition valider">valider</button>
                 </details>
             </li>
-            <li><a href="/Boutique.html "
-                    class="  bg-no-repeat bg-center bg-contain w-[300px] h-[100px] flex items-center justify-center 
-text-gray-50 text-3xl transition-transform hover:scale-105 font-[family-name:'MedievalSharp', cursive] text-shadow-lg/30">Boutique</a>
+            <li><a href="Boutique.html"
+                    class="w-[200px] lg:w-[250px] h-[80px] flex items-center justify-center text-gray-50 text-3xl transition-transform hover:scale-105 font-[family-name:'MedievalSharp',cursive] text-shadow-lg/30">Boutique</a>
             </li>
-            <li><a href="/Grimoire.html"
-                    class="  bg-no-repeat bg-center bg-contain w-[300px] h-[100px] flex items-center justify-center 
-text-gray-50 text-3xl transition-transform hover:scale-105 font-[family-name:'MedievalSharp', cursive] text-shadow-lg/30">Grimoire</a>
+            <li><a href="Grimoire.html"
+                    class="w-[200px] lg:w-[250px] h-[80px] flex items-center justify-center text-gray-50 text-3xl transition-transform hover:scale-105 font-[family-name:'MedievalSharp',cursive] text-shadow-lg/30">Grimoire</a>
             </li>
-            <li><a href="/Deck.html"
-                    class=" bg-no-repeat bg-center bg-contain w-[300px] h-[100px] flex items-center justify-center 
-text-gray-50 text-3xl transition-transform hover:scale-105 font-[family-name:'MedievalSharp', cursive] text-shadow-lg/30">Deck</a>
+            <li><a href="Deck.html"
+                    class="w-[200px] lg:w-[250px] h-[80px] flex items-center justify-center text-gray-50 text-3xl transition-transform hover:scale-105 font-[family-name:'MedievalSharp',cursive] text-shadow-lg/30">Deck</a>
             </li>
             <li><a href="inboxing.html"
-                    class=" bg-no-repeat bg-center bg-contain w-[300px] h-[100px] flex items-center justify-center 
-text-gray-50 text-3xl transition-transform hover:scale-105 font-[family-name:'MedievalSharp', cursive] text-shadow-lg/30">inboxing</a>
+                    class="w-[200px] lg:w-[250px] h-[80px] flex items-center justify-center text-amber-400 text-3xl transition-transform hover:scale-105 font-[family-name:'MedievalSharp',cursive] text-shadow-lg/30 font-bold underline">inboxing</a>
             </li>
         </ul>
     </header>
-    <main class="flex">
-        <div class="backdrop-blur-lg rounded-3xl border border-white/20 shadow-2xl bg-white/10 max-h-[500px] max-w-[500px] p-6 flex flex-row gap-3 overflow-y-auto lesboosterbox " ></div>
-        <div class="backdrop-blur-lg rounded-3xl border border-white/20 shadow-2xl bg-white/10  p-6  gap-3 les5cartsbox "></div>
+
+    <main class="max-w-7xl mx-auto p-4 flex flex-col lg:flex-row gap-6 items-start">
+        <!-- Boosters Column -->
+        <section class="w-full lg:w-1/3 backdrop-blur-lg rounded-3xl border border-white/20 shadow-2xl bg-white/10 p-6">
+            <h2 class="text-white text-2xl font-bold font-[family-name:'MedievalSharp',cursive] mb-4 text-center border-b border-white/20 pb-2">
+                Mes Boosters Validés
+            </h2>
+            <ul class="flex flex-col gap-3 max-h-[600px] overflow-y-auto lesboosterbox">
+                <!-- Les boosters validés apparaîtront ici -->
+            </ul>
+        </section>
+
+        <!-- Unpacked Cards Column -->
+        <section class="w-full lg:w-2/3 backdrop-blur-lg rounded-3xl border border-white/20 shadow-2xl bg-white/10 p-6 min-h-[400px]">
+            <h2 class="text-white text-2xl font-bold font-[family-name:'MedievalSharp',cursive] mb-4 text-center border-b border-white/20 pb-2">
+                Cartes Révélées (5 Cartes)
+            </h2>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 items-center justify-center les5cartsbox">
+                <p class="text-gray-300 text-center col-span-full py-12 text-lg">
+                    Ouvrez un booster pour révéler vos cartes !
+                </p>
+            </div>
+        </section>
     </main>
 </body>
 
