@@ -4,16 +4,16 @@ const les5cartsbox = document.querySelector(".les5cartsbox");
 
 function renderInboxing() {
     if (!lesboosterbox) return;
-
+    // idir bla rah makin walo ga3
     if (!boostervalider || boostervalider.length === 0) {
         lesboosterbox.innerHTML = `<li class="text-white/80 p-4 text-center">Aucun booster à ouvrir. Achetez et validez vos boosters dans la Boutique !</li>`;
         return;
     }
-
+    // hz mn valid booster o stfhom f boosterbox div
     lesboosterbox.innerHTML = boostervalider.map((item, index) => {
+
         const qte = item.qte || 1;
-        return `
-        <li class="p-4 border border-white/10 flex justify-between items-center bg-black/30 rounded-xl mb-2 hover:bg-black/40 transition">
+        return `<li class="p-4 border border-white/10 flex justify-between items-center bg-black/30 rounded-xl mb-2 hover:bg-black/40 transition">
             <div class="flex items-center gap-3">
                 ${item.img ? `<img src="${item.img}" alt="${item.nom}" class="w-12 h-16 object-contain">` : ''}
                 <div>
@@ -39,15 +39,14 @@ if (lesboosterbox) {
         if (!btn) return;
         const index = Number(btn.dataset.index);
 
-        const cardPool = (typeof datacarts !== 'undefined' && datacarts.length) 
-            ? datacarts 
+        const cardPool = (typeof MYTHORIA_CARDS !== 'undefined' && MYTHORIA_CARDS.length) 
+            ? MYTHORIA_CARDS 
             : ((typeof MYTHORIA_CARDS !== 'undefined') ? MYTHORIA_CARDS : []);
 
         if (cardPool.length > 0) {
             const randomCards = [...cardPool].sort(() => 0.5 - Math.random()).slice(0, 5);
-            mesCartes = [...mesCartes, ...randomCards]; // Enregistrer dans la collection
+            mesCartes = [...mesCartes, ...randomCards]; 
 
-            // Décrémenter la quantité ou retirer si 1
             if (boostervalider[index].qte && boostervalider[index].qte > 1) {
                 boostervalider[index].qte -= 1;
             } else {
