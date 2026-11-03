@@ -77,5 +77,85 @@ const MYTHORIA_CARDS = [
         type: "spell",
         rarete: "epique",
         effet: "Inflige 40 dégâts à une créature adverse."
+    },
+    {
+        id: "dark-unicorn",
+        nom: "Licorne Noire",
+        img: "assets/carts/Dark Unicorn.png",
+        description: "Créature corrompue par les ombres, sa corne transperce les défenses les plus solides.",
+        type: "tenebres",
+        rarete: "rare",
+        attaque: 45,
+        vie: 65
+    },
+    {
+        id: "executioner",
+        nom: "Bourreau Sombre",
+        img: "assets/carts/Executioner.png",
+        description: "Implacable et sans pitié, sa hache lourde ne tremble devant aucun adversaire.",
+        type: "tenebres",
+        rarete: "rare",
+        attaque: 50,
+        vie: 60
+    },
+    {
+        id: "fallen-angel",
+        nom: "Ange Déchu",
+        img: "assets/carts/Fallen Angel.png",
+        description: "Autrefois porteur de lumière céleste, ses ailes brisées répandent désormais les ténèbres.",
+        type: "tenebres",
+        rarete: "legendaire",
+        attaque: 70,
+        vie: 85
+    },
+    {
+        id: "graveyard-golem",
+        nom: "Golem des Tombes",
+        img: "assets/carts/Graveyard Golem.png",
+        description: "Colosse façonné de pierres tombales et d'ossements, doté d'une résistance herculéenne.",
+        type: "tenebres",
+        rarete: "epique",
+        attaque: 40,
+        vie: 100
+    },
+    {
+        id: "mage-lightning",
+        nom: "Mage de Foudre",
+        img: "assets/carts/Mage Lightning.png",
+        description: "Maître des orages sacrés, il canalise la foudre lumineuse pour frapper avec précision.",
+        type: "lumiere",
+        rarete: "epique",
+        attaque: 65,
+        vie: 55
+    },
+    {
+        id: "skeleton-soldier",
+        nom: "Soldat Squelette",
+        img: "assets/carts/Skeleton Soldier.png",
+        description: "Guerrier infatigable relevé de sa tombe, marchant aveuglément pour son maître.",
+        type: "tenebres",
+        rarete: "commune",
+        attaque: 25,
+        vie: 40
+    },
+    {
+        id: "vampire-count",
+        nom: "Comte Vampire",
+        img: "assets/carts/Vampire Count.png",
+        description: "Seigneur de la nuit élégant et fatal, se nourrissant de l'essence vitale de ses ennemis.",
+        type: "tenebres",
+        rarete: "epique",
+        attaque: 60,
+        vie: 70
+    },
+    {
+        id: "witch",
+        nom: "Sorcière des Brumes",
+        img: "assets/carts/Witch.png",
+        description: "Tisseuse de maléfices anciens, ses malédictions affaiblissent l'âme des guerriers.",
+        type: "tenebres",
+        rarete: "rare",
+        attaque: 40,
+        vie: 50
     }
 ];

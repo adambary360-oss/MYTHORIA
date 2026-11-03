@@ -39,24 +39,30 @@ function botchoise() {
 function Ténèbresdeck(deck) {
     const Ténèbresdeck = deck.map(cart => {
         if (cart.type === 'lumiere') {
-            return { ...cart, attaque: cart.attaque * 0.8 };
+            return { ...cart, attaque: cart.attaque * 0.8 ,vie: cart.vie * 0.8};
         }
         return cart;
     });
     console.log(Ténèbresdeck);
-    return Ténèbresdeck
+    deck = Ténèbresdeck
+    console.log(deck)
+    return deck
 }
-
+vie
+: 
+35
 
 function Lumièredeck(deck) {
     const Lumièredeck = deck.map(cart => {
         if (cart.type === 'tenebres') {
-            return { ...cart, attaque: cart.attaque * 0.8 };
+            return { ...cart, attaque: cart.attaque * 0.8 ,vie: cart.vie * 0.8 };
         }    
         return cart;
     });    
-    console.log(Lumièredeck);
-    return Lumièredeck
+
+    deck = Lumièredeck
+    console.log(deck)
+    return deck
 }    
 
 
