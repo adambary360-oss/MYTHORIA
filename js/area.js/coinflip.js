@@ -1,11 +1,63 @@
 const btnflip = document.getElementById("btnflip")
-console.log(btnflip)
 const overlaydiv = document.getElementById("overlaydiv")
-console.log(overlaydiv);
+const botdeck = (MYTHORIA_CARDS.sort(() => 0.5 - Math.random())).slice(0, 3); //deck ta3 bot
 
 function off() {
     document.getElementById("overlay").style.display = "none";
 }
+//les choise
+function choise() {
+    const btnTénèbres = document.getElementById("Ténèbres")
+    console.log(btnTénèbres)
+    const btnLumière = document.getElementById("Lumière")
+    console.log(btnLumière)
+
+    btnTénèbres.addEventListener('click', (e) => {
+
+        Ténèbresdeck(monDeck)
+        Lumièredeck(botdeck)
+
+    })
+    btnLumière.addEventListener('click', (e) => {
+        Ténèbresdeck(botdeck)
+        Lumièredeck(monDeck)
+    }
+    )
+}
+function botchoise() {
+    const botchoise = (Math.random() > 0.5 ? "Ténèbres" : "Lumière")
+    if (botchoise === "Ténèbres") {
+        Ténèbresdeck(monDeck)
+        Lumièredeck(botdeck)
+    }
+    else {
+        Ténèbresdeck(botdeck)
+        Lumièredeck(monDeck)
+    }
+}    
+    //trtomon ta3 les cart li f deck
+function Ténèbresdeck(deck) {
+    const Ténèbresdeck = deck.map(cart => {
+        if (cart.type === 'lumiere') {
+            return { ...cart, attaque: cart.attaque * 0.8 };
+        }
+        return cart;
+    });
+    console.log(Ténèbresdeck);
+    return Ténèbresdeck
+}
+
+
+function Lumièredeck(deck) {
+    const Lumièredeck = deck.map(cart => {
+        if (cart.type === 'tenebres') {
+            return { ...cart, attaque: cart.attaque * 0.8 };
+        }    
+        return cart;
+    });    
+    console.log(Lumièredeck);
+    return Lumièredeck
+}    
 
 
 btnflip.addEventListener('click', (e) => {
@@ -21,8 +73,8 @@ btnflip.addEventListener('click', (e) => {
                         class="bg-amber-900 border-2 border-amber-600 text-white px-8 py-3 rounded-xl uppercase tracking-wider font-bold hover:bg-amber-700 transition"
                         id="Lumière">
                         Lumière
-                    </button>
-                </div>
+                    </button>    
+                </div>    
 
                 <div class="flex flex-col items-center gap-4">
                     <img src="assets/icons/TénèbresTénèbres.png" alt="Ténèbres" class="max-h-[100px]">
@@ -30,32 +82,27 @@ btnflip.addEventListener('click', (e) => {
                         class="bg-indigo-900 border-2 border-indigo-600 text-white px-8 py-3 rounded-xl uppercase tracking-wider font-bold hover:bg-indigo-700 transition"
                         id="Ténèbres">
                         Ténèbres
-                    </button>
-                </div>`
-    }
+                    </button>    
+                </div>`    
+
+        choise()        
+    }    
     else {
         btnflip.style.display = "none"
         overlaydiv.innerHTML = `<div class = "flex flex-col items-center gap-4">
                 <p class = "text-white"> le bot que va choise</p>
                      <button onclick="off()"
-                    class="bg-amber-900 border-2 border-amber-600 text-white px-8 py-3 rounded-xl uppercase tracking-wider font-bold hover:bg-amber-700 transition"
+                    class="bg-amber-900 border-2 border-amber-600 text-white px-8 py-3 rounded-xl uppercase tracking-wider font-bold hover:bg-amber-700 transition" 
                     id="Lumière">
                     start
                     </button> 
                     </div>`
+        botchoise()            
 
-    }
-})
+    }    
+})    
 
 
-Ténèbresdeck()
-function Ténèbresdeck() {
-    const Ténèbrescarts = monDeck.map(cart => {
-        if (cart.type === 'tenebres') {
-            return { ...cart, attaque: cart.attaque * 0.8 };
-        }
-        return cart;
-    });
-    console.log(Ténèbrescarts);
-    
-}
+
+
+
