@@ -48,9 +48,6 @@ function Ténèbresdeck(deck) {
     console.log(deck)
     return deck
 }
-vie
-: 
-35
 
 function Lumièredeck(deck) {
     const Lumièredeck = deck.map(cart => {
